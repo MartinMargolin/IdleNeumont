@@ -6,4 +6,22 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Resources\ChaoticWhiteSmall.png" />
+    <None Remove="Resources\IdleNeumontCyan.png" />
+    <None Remove="Resources\IdleNeumontOpal.png" />
+    <None Remove="Resources\IdleNeumontPastel.png" />
+    <None Remove="Resources\IdleNeumontPrestigeEdition.png" />
+    <None Remove="Resources\NeumontGold.png" />
+    <None Remove="Resources\NeumontGoldSmall.png" />
+    <None Remove="Resources\NeumontPastel.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\ChaoticWhiteSmall.png" />
+    <Resource Include="Resources\NeumontGold.png" />
+    <Resource Include="Resources\NeumontGoldSmall.png" />
+    <Resource Include="Resources\NeumontPastel.png" />
+  </ItemGroup>
+
 </Project>

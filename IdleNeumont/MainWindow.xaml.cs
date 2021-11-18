@@ -29,36 +29,40 @@ namespace IdleNeumont
         {
             InitializeComponent();
 
+            timer.Interval = new TimeSpan(0, 0, 4);
+            timer.Tick += loadStart;
+            timer.Start();
+
             ThreadStart backRef = new ThreadStart(callBackThread);
           
 
             Thread backThread = new Thread(backRef);
             backThread.Start();
 
-            
+
+
         }
+            System.Windows.Threading.DispatcherTimer timer = new System.Windows.Threading.DispatcherTimer();
 
         public void callBackThread()
         {
 
-
-            do
-            {
-                try
+/*             
+                Action action = () =>
                 {
-                    this.Dispatcher.Invoke(() =>
-                    {
-                        numText.Text = (int.Parse(numText.Text) + 1).ToString();
-                    });
-                } catch (TaskCanceledException e)
-                {
-                    Console.WriteLine(e);
-                }
-
-                Thread.Sleep(50);
-            } while (!genStop);
-            
+                  
+                };
+                Dispatcher.BeginInvoke(action);
+*/               
+                
         }
 
+
+        private void loadStart(object sender, EventArgs e)
+        {
+            timer.Stop();
+            neumontStart.Visibility = Visibility.Visible;
+            chaoticStart.Visibility = Visibility.Visible;
+        }
     }
 }
