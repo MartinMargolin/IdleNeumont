@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Threading;
 using System.Media;
+using System.IO;
 
 namespace IdleNeumont
 {
@@ -29,6 +30,8 @@ namespace IdleNeumont
         public MainWindow()
         {
             InitializeComponent();
+
+            Console.WriteLine(where);
 
             timer.Interval = new TimeSpan(0,0,4);
             timer.Tick += loadStart;
@@ -46,11 +49,11 @@ namespace IdleNeumont
 
         }
 
-    
 
+        private static string where = (Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName).Parent.FullName) + @"\IdleNeumont\Resources\startup.wav";
 
         // System.Windows.Media.MediaPlayer startSound = new System.Windows.Media.MediaPlayer();    
-           System.Media.SoundPlayer startSound = new System.Media.SoundPlayer(@"C:\Users\mmargolin\source\repos\IdleNeumont\IdleNeumont\Resources\startup.wav");
+        System.Media.SoundPlayer startSound = new System.Media.SoundPlayer(where);
            
         System.Windows.Threading.DispatcherTimer timer = new System.Windows.Threading.DispatcherTimer();
 
