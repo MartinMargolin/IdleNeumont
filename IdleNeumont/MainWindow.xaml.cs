@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Threading;
+using System.Media;
 
 namespace IdleNeumont
 {
@@ -45,9 +46,12 @@ namespace IdleNeumont
 
         }
 
-         
-        // System.Windows.Media.MediaPlayer startSound = new System.Windows.Media.MediaPlayer();    
+    
 
+
+        // System.Windows.Media.MediaPlayer startSound = new System.Windows.Media.MediaPlayer();    
+           System.Media.SoundPlayer startSound = new System.Media.SoundPlayer(@"C:\Users\mmargolin\source\repos\IdleNeumont\IdleNeumont\Resources\startup.wav");
+           
         System.Windows.Threading.DispatcherTimer timer = new System.Windows.Threading.DispatcherTimer();
 
         public void callBackThread()
@@ -67,7 +71,6 @@ namespace IdleNeumont
         private void loadStart(object sender, EventArgs e)
         {
             timer.Stop();
-            System.Media.SoundPlayer startSound = new System.Media.SoundPlayer("startup.wav");
             startSound.Play();
             stackStart.Visibility = Visibility.Visible;
             neumontStart.Visibility = Visibility.Visible;
