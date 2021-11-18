@@ -6,5 +6,9 @@
         xmlns:local="clr-namespace:IdleNeumont"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid/>
+    <Grid>
+        <TextBlock x:Name="numText"  Width="50" Height="50" Text="0" FontSize="35" TextAlignment="Center"/>
+        
+    </Grid>
+   
 </Window>
