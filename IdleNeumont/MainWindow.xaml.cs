@@ -33,6 +33,8 @@ namespace IdleNeumont
             timer.Tick += loadStart;
             timer.Start();
 
+            
+
             ThreadStart backRef = new ThreadStart(callBackThread);
           
 
@@ -43,9 +45,10 @@ namespace IdleNeumont
 
         }
 
-            System.Media.SoundPlayer startSound = new System.Media.SoundPlayer(@"\Resources\startup.wav");
-       
-            System.Windows.Threading.DispatcherTimer timer = new System.Windows.Threading.DispatcherTimer();
+         
+        // System.Windows.Media.MediaPlayer startSound = new System.Windows.Media.MediaPlayer();    
+
+        System.Windows.Threading.DispatcherTimer timer = new System.Windows.Threading.DispatcherTimer();
 
         public void callBackThread()
         {
@@ -64,6 +67,7 @@ namespace IdleNeumont
         private void loadStart(object sender, EventArgs e)
         {
             timer.Stop();
+            System.Media.SoundPlayer startSound = new System.Media.SoundPlayer("startup.wav");
             startSound.Play();
             stackStart.Visibility = Visibility.Visible;
             neumontStart.Visibility = Visibility.Visible;
