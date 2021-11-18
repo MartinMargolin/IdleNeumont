@@ -23,13 +23,12 @@ namespace IdleNeumont
    
     public partial class MainWindow : Window
     {
-        bool genStop = false;
 
         public MainWindow()
         {
             InitializeComponent();
 
-            timer.Interval = new TimeSpan(0, 0, 4);
+            timer.Interval = new TimeSpan(0,0,4);
             timer.Tick += loadStart;
             timer.Start();
 
@@ -64,6 +63,13 @@ namespace IdleNeumont
             stackStart.Visibility = Visibility.Visible;
             neumontStart.Visibility = Visibility.Visible;
             chaoticStart.Visibility = Visibility.Visible;
+            Playscreen.Visibility = Visibility.Visible;
+        }
+        private void btnNextScreen(object sender, RoutedEventArgs e)
+        {
+            Window1 window1 = new Window1();
+            window1.Show();
+            this.Close();
         }
     }
 }
