@@ -23,6 +23,7 @@ namespace IdleNeumont
    
     public partial class MainWindow : Window
     {
+        bool genStop = false;
 
         public MainWindow()
         {
@@ -41,6 +42,9 @@ namespace IdleNeumont
 
 
         }
+
+            System.Media.SoundPlayer startSound = new System.Media.SoundPlayer(@"\Resources\startup.wav");
+       
             System.Windows.Threading.DispatcherTimer timer = new System.Windows.Threading.DispatcherTimer();
 
         public void callBackThread()
@@ -60,8 +64,17 @@ namespace IdleNeumont
         private void loadStart(object sender, EventArgs e)
         {
             timer.Stop();
+            startSound.Play();
             stackStart.Visibility = Visibility.Visible;
             neumontStart.Visibility = Visibility.Visible;
+            timer.Interval = new TimeSpan(0, 0, 1);
+            timer.Tick += chaosStart;
+            timer.Start();
+        }
+
+        private void chaosStart(object sender, EventArgs e)
+        {
+            timer.Stop();
             chaoticStart.Visibility = Visibility.Visible;
             Playscreen.Visibility = Visibility.Visible;
         }
@@ -71,5 +84,6 @@ namespace IdleNeumont
             window1.Show();
             this.Close();
         }
+        
     }
 }

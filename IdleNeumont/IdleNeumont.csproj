@@ -15,6 +15,7 @@
     <None Remove="Resources\NeumontGold.png" />
     <None Remove="Resources\NeumontGoldSmall.png" />
     <None Remove="Resources\NeumontPastel.png" />
+    <None Remove="Resources\startup.wav" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,6 +23,7 @@
     <Resource Include="Resources\NeumontGold.png" />
     <Resource Include="Resources\NeumontGoldSmall.png" />
     <Resource Include="Resources\NeumontPastel.png" />
+    <Resource Include="Resources\startup.wav" />
   </ItemGroup>
 
 </Project>
