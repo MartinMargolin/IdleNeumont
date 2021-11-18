@@ -61,6 +61,7 @@ namespace IdleNeumont
         private void loadStart(object sender, EventArgs e)
         {
             timer.Stop();
+            stackStart.Visibility = Visibility.Visible;
             neumontStart.Visibility = Visibility.Visible;
             chaoticStart.Visibility = Visibility.Visible;
         }
