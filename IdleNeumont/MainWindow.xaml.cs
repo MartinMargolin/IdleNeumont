@@ -29,7 +29,7 @@ namespace IdleNeumont
         {
             InitializeComponent();
 
-            timer.Interval = new TimeSpan(0, 0, 4);
+            timer.Interval = new TimeSpan(0, 0, 2);
             timer.Tick += loadStart;
             timer.Start();
 
@@ -42,6 +42,9 @@ namespace IdleNeumont
 
 
         }
+
+            System.Media.SoundPlayer startSound = new System.Media.SoundPlayer(@"\Resources\startup.wav");
+       
             System.Windows.Threading.DispatcherTimer timer = new System.Windows.Threading.DispatcherTimer();
 
         public void callBackThread()
@@ -61,9 +64,19 @@ namespace IdleNeumont
         private void loadStart(object sender, EventArgs e)
         {
             timer.Stop();
+            startSound.Play();
             stackStart.Visibility = Visibility.Visible;
             neumontStart.Visibility = Visibility.Visible;
+            timer.Interval = new TimeSpan(0, 0, 1);
+            timer.Tick += chaosStart;
+            timer.Start();
+        }
+
+        private void chaosStart(object sender, EventArgs e)
+        {
+            timer.Stop();
             chaoticStart.Visibility = Visibility.Visible;
         }
+        
     }
 }
