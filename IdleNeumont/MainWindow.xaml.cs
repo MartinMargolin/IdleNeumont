@@ -31,7 +31,7 @@ namespace IdleNeumont
         {
             InitializeComponent();
 
-            Console.WriteLine(where);
+            
 
             timer.Interval = new TimeSpan(0,0,4);
             timer.Tick += loadStart;
@@ -50,10 +50,10 @@ namespace IdleNeumont
         }
 
 
-        private static string where = (Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName).Parent.FullName) + @"\IdleNeumont\Resources\startup.wav";
+        
 
         // System.Windows.Media.MediaPlayer startSound = new System.Windows.Media.MediaPlayer();    
-        System.Media.SoundPlayer startSound = new System.Media.SoundPlayer(where);
+        System.Media.SoundPlayer startSound = new System.Media.SoundPlayer(((Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName).Parent.FullName) + @"\IdleNeumont\Resources\startup.wav"));
            
         System.Windows.Threading.DispatcherTimer timer = new System.Windows.Threading.DispatcherTimer();
 
