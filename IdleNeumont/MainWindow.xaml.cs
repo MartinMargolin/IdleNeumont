@@ -87,14 +87,10 @@ namespace IdleNeumont
         {
             timer.Stop();
             chaoticStart.Visibility = Visibility.Visible;
-            Playscreen.Visibility = Visibility.Visible;
+           
         }
-        private void btnNextScreen(object sender, RoutedEventArgs e)
-        {
-            Window1 window1 = new Window1();
-            window1.Show();
-            this.Close();
-        }
+       
+        
         
     }
 }
