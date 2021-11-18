@@ -33,11 +33,12 @@ namespace IdleNeumont
 
             
 
-            timer.Interval = new TimeSpan(0,0,4);
+            timer.Interval = new TimeSpan(0,0,0,1,300);
             timer.Tick += loadStart;
             timer.Start();
+            startSound.Play();
 
-            
+
 
             ThreadStart backRef = new ThreadStart(callBackThread);
           
@@ -74,10 +75,10 @@ namespace IdleNeumont
         private void loadStart(object sender, EventArgs e)
         {
             timer.Stop();
-            startSound.Play();
+            
             stackStart.Visibility = Visibility.Visible;
             neumontStart.Visibility = Visibility.Visible;
-            timer.Interval = new TimeSpan(0, 0, 1);
+            timer.Interval = new TimeSpan(0, 0, 0, 2, 200);
             timer.Tick += chaosStart;
             timer.Start();
         }
