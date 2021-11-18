@@ -8,7 +8,8 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <TextBlock x:Name="numText"  Width="50" Height="50" Text="0" FontSize="35" TextAlignment="Center"/>
-        
+        <TextBox HorizontalAlignment="Left" Height="96" Margin="258,146,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="220"/>
+
     </Grid>
-   
+
 </Window>
