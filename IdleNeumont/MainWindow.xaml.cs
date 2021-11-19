@@ -125,13 +125,30 @@ namespace IdleNeumont
             neumontStart.Visibility = Visibility.Collapsed;
             stackStart.Visibility = Visibility.Collapsed;
 
+
+            mainMenu.Visibility = Visibility.Visible;
             Game();
            
         }
 
+        private void btn_Quit(object sender, RoutedEventArgs e)
+        {
 
-       
+        }
 
+        private void btn_Settings(object sender, RoutedEventArgs e)
+        {
 
+        }
+
+        private void btn_LoadGame(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_Newgame(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

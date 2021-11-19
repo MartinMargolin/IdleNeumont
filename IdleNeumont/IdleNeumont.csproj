@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <None Remove="Resources\ChaoticWhiteSmall.png" />
+    <None Remove="Resources\Full_Pastel.png" />
     <None Remove="Resources\IdleNeumontCyan.png" />
     <None Remove="Resources\IdleNeumontOpal.png" />
     <None Remove="Resources\IdleNeumontPastel.png" />
@@ -25,6 +26,7 @@
 
   <ItemGroup>
     <Resource Include="Resources\ChaoticWhiteSmall.png" />
+    <Resource Include="Resources\Full_Pastel.png" />
     <Resource Include="Resources\LoadGame.png" />
     <Resource Include="Resources\NeumontGold.png" />
     <Resource Include="Resources\NeumontGoldSmall.png" />
