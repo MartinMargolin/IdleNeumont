@@ -22,7 +22,7 @@ namespace IdleNeumont
     public partial class MainWindow : Window
     {
         // Don't worry about this
-        bool genStop = false;
+        private bool genStop = false;
 
         public MainWindow()
         {
@@ -38,6 +38,16 @@ namespace IdleNeumont
             startSound.Play();
 
 
+          
+
+
+
+        }
+
+        // GAME METHOD REEE
+        private void Game()
+        {
+
             // Thread creaton stuff
             ThreadStart backRef = new ThreadStart(callBackThread);
             Thread backThread = new Thread(backRef);
@@ -48,9 +58,10 @@ namespace IdleNeumont
         }
 
 
+
         //
 
-        
+
         // CREATE SOUND -> DIRECTORY MANAGEMENT FOR RELATIVE FILEPATH
         System.Media.SoundPlayer startSound = new System.Media.SoundPlayer(((Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName).Parent.FullName) + @"\IdleNeumont\Resources\startup.wav"));
            
@@ -103,14 +114,24 @@ namespace IdleNeumont
             chaoticStart.Visibility = Visibility.Visible;
 
             // Another timer shit
-           // timer.Interval = new TimeSpan(0, 0, 0, 2, 0);
-           // timer.Tick += buttonStart;
+            timer.Interval = new TimeSpan(0, 0, 0, 2, 0);
+            timer.Tick += loadingTime;
            // timer.Start();
+        }
+
+        private void loadingTime(object sender, EventArgs e)
+        {
+            chaoticStart.Visibility = Visibility.Collapsed;
+            neumontStart.Visibility = Visibility.Collapsed;
+            stackStart.Visibility = Visibility.Collapsed;
+
+            Game();
+           
         }
 
 
        
-        
-        
+
+
     }
 }
