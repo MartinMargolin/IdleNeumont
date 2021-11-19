@@ -130,8 +130,5 @@ namespace IdleNeumont
         }
 
 
-       
-
-
     }
 }
