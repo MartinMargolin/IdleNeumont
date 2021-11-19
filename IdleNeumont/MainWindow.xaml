@@ -12,22 +12,18 @@
             <Image x:Name="chaoticStart" Source="/Resources/ChaoticWhiteSmall.png" Width="400" Visibility="Collapsed"/>
         </StackPanel>
         <StackPanel x:Name="StartMenu" Visibility="Visible" Margin="10">
-            <TextBox x:Name="Title" FontSize="64" Text="Idle Neumont" Visibility="Visible" HorizontalAlignment="Center" Margin="0,100,0,0"/>
-            <Button Name="NewGame" Visibility="Visible" Width="100" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center" Content="New Game" FontSize="16" Click="btn_Newgame" Margin="15">
-                
-                
+            <TextBox x:Name="Title" FontSize="64" Text="Idle Neumont" Visibility="Visible" HorizontalAlignment="Center" Margin="0,100,0,25"/>
+            <Button  x:Name="NewGame" Visibility="Visible" Width="125" Height="60" Click="btn_Newgame" Margin="10">
+                <Image Source="/Resources/NewGame.png"/>
             </Button>
-            <Button Name="LoadGaem" Visibility="Visible" Width="100" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Load game" FontSize="16" Click="btn_LoadGame" Margin="15">
-                
-                
+            <Button x:Name="LoadGame" Visibility="Visible" Width="125" Height="60" Click="btn_LoadGame" Margin="10">
+                <Image Source="/Resources/LoadGame.png"/>
             </Button>
-            <Button Name="Settings" Visibility="Visible" Width="100" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Settings" FontSize="16" Click="btn_Settings" Margin="15">
-                
-                
+            <Button x:Name="Settings" Visibility="Visible" Width="125" Height="60" Click="btn_Settings" Margin="10">
+                <Image Source="/Resources/Settings.png"/>
             </Button>
-            <Button Name="Quit" Visibility="Visible" Width="100" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Quit" FontSize="16" Click="btn_Quit" Margin="15">
-                
-                
+            <Button x:Name="Quit" Visibility="Visible" Width="125" Height="60" Click="btn_Quit" Margin="10">
+                <Image Source="/Resources/Quit.png"/>
             </Button>
             
 
