@@ -116,7 +116,7 @@ namespace IdleNeumont
             // Another timer shit
             timer.Interval = new TimeSpan(0, 0, 0, 2, 0);
             timer.Tick += loadingTime;
-           // timer.Start();
+            timer.Start();
         }
 
         private void loadingTime(object sender, EventArgs e)
@@ -125,6 +125,7 @@ namespace IdleNeumont
             neumontStart.Visibility = Visibility.Collapsed;
             stackStart.Visibility = Visibility.Collapsed;
 
+            this.Background = Brushes.White;
 
             mainMenu.Visibility = Visibility.Visible;
             Game();
@@ -147,6 +148,21 @@ namespace IdleNeumont
         }
 
         private void btn_Newgame(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_Study(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_Zoom(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_Homework(object sender, RoutedEventArgs e)
         {
 
         }
