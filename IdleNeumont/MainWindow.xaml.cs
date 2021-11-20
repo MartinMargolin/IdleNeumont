@@ -80,20 +80,17 @@ namespace IdleNeumont
 
         // SECOND THREAD FOR BACKGROUND
         private void callBackThread()
-        {
+        {            
+            this.Dispatcher.BeginInvoke(DispatcherPriority.Normal,
+                        (ThreadStart)delegate ()
+                        {
+                           score = (score + (baseIncrement * multiplier));
+                            txtKnowledgeNum.Text = score.ToString();
+                        }
+                        );
 
-           
-                // IDLE KNOWLEDGE
-                Action action = () =>
-                {
-                    score = (score + (baseIncrement * multiplier));
-                    txtKnowledgeNum.Text = score.ToString();
-                }; Dispatcher.BeginInvoke(action);
-
-                Thread.Sleep(sleeptime);
-            } while (!genStop);
-                
         }
+    
 
 
 
