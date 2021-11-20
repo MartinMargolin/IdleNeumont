@@ -75,6 +75,7 @@ namespace IdleNeumont
         // CREATE TIMER
         System.Windows.Threading.DispatcherTimer timer = new System.Windows.Threading.DispatcherTimer();
 
+        int sleeptime = 500;
 
         // SECOND THREAD FOR BACKGROUND
         public void callBackThread()
@@ -88,6 +89,8 @@ namespace IdleNeumont
                     score = (score + (baseIncrement * multiplier));
                     txtKnowledgeNum.Text = score.ToString();
                 }; Dispatcher.BeginInvoke(action);
+
+                Thread.Sleep(sleeptime);
             } while (!genStop);
                 
         }
@@ -142,7 +145,6 @@ namespace IdleNeumont
             mainMenu.Visibility = Visibility.Visible;
             
             // Run the actual game xd
-            Game();
            
         }
 
@@ -180,6 +182,13 @@ namespace IdleNeumont
 
         private void btn_Zoom(object sender, RoutedEventArgs e)
         {
+            Game();
+            int purchase = 100;
+            if(score <= purchase)
+            {
+                sleeptime -= 100;
+                purchase += 100;
+            }
 
         }
 
