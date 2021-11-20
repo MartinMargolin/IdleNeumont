@@ -28,7 +28,7 @@ namespace IdleNeumont
         {
             InitializeComponent();
 
-            gameBackground.ImageSource = new Uri(@"");
+            gameBackground.ImageSource = new BitmapImage(new Uri(((Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName).Parent.FullName) + @"\IdleNeumont\Resources\Background.png")));
             
             // TIMER TimeSpan SYNTAX -> (Days, Hours, Minutes, Seconds, Milliseconds)
             timer.Interval = new TimeSpan(0,0,0,1,300);
@@ -164,6 +164,7 @@ namespace IdleNeumont
             timer.Stop();
             mainMenu.Visibility = Visibility.Collapsed;
             gameWindow.Visibility = Visibility.Visible;
+            this.Background = gameBackground;
         }
         //local variables for states
         string baseString = "Knowladge: ";
@@ -173,7 +174,7 @@ namespace IdleNeumont
         {
             if(score == 200)
             {
-                baseString = "Knowledge";
+                baseString = "Knowledge: ";
             }
             score = score + 10;
             string finalString = baseString + score;
