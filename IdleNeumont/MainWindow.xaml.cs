@@ -149,7 +149,9 @@ namespace IdleNeumont
 
         private void btn_Newgame(object sender, RoutedEventArgs e)
         {
-
+            mainMenu.Visibility = Visibility.Collapsed;
+            GameWindow.Visibility = Visibility.Visible;
+            
         }
 
         private void btn_Study(object sender, RoutedEventArgs e)
