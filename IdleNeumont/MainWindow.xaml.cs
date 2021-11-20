@@ -121,13 +121,18 @@ namespace IdleNeumont
 
         private void loadingTime(object sender, EventArgs e)
         {
+            // Blanking Load Window 
             chaoticStart.Visibility = Visibility.Collapsed;
             neumontStart.Visibility = Visibility.Collapsed;
             stackStart.Visibility = Visibility.Collapsed;
 
+            // Background -> White
             this.Background = Brushes.White;
 
+            // Menu -> Visible
             mainMenu.Visibility = Visibility.Visible;
+
+            // Run the actual game xd
             Game();
            
         }
