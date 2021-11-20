@@ -24,11 +24,13 @@ namespace IdleNeumont
         // Don't worry about this
         private bool genStop = false;
 
+        double score = 0;
+        private double multiplier = 1.0;
+        private double baseIncrement = 1.0;
+
         public MainWindow()
         {
             InitializeComponent();
-
-            gameBackground.ImageSource = new BitmapImage(new Uri(((Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName).Parent.FullName) + @"\IdleNeumont\Resources\Background.png")));
             
             // TIMER TimeSpan SYNTAX -> (Days, Hours, Minutes, Seconds, Milliseconds)
             timer.Interval = new TimeSpan(0,0,0,1,300);
@@ -60,15 +62,14 @@ namespace IdleNeumont
 
 
 
-        //
+        
 
 
         // CREATE SOUNDS -> DIRECTORY MANAGEMENT FOR RELATIVE FILEPATH
         System.Media.SoundPlayer startSound = new System.Media.SoundPlayer(((Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName).Parent.FullName) + @"\IdleNeumont\Resources\startup.wav"));
 
         // CREATE BRUSHES/UI CHANGES 
-
-        ImageBrush gameBackground = new ImageBrush();
+        ImageBrush gameBackground = new ImageBrush(new BitmapImage(new Uri(((Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName).Parent.FullName) + @"\IdleNeumont\Resources\Background.png"))));
        
 
         // CREATE TIMER
@@ -78,14 +79,16 @@ namespace IdleNeumont
         // SECOND THREAD FOR BACKGROUND
         public void callBackThread()
         {
-                // THIS IS EXAMPLE OF OWNERSHIP SHARE/ TRANSFER 
-/*             
+
+            do
+            {
+                // IDLE KNOWLEDGE
                 Action action = () =>
                 {
-                  
-                };
-                Dispatcher.BeginInvoke(action);
-*/               
+                    score = (score + (baseIncrement * multiplier));
+                    txtKnowledgeNum.Text = score.ToString();
+                }; Dispatcher.BeginInvoke(action);
+            } while (!genStop);
                 
         }
 
@@ -167,18 +170,12 @@ namespace IdleNeumont
             this.Background = gameBackground;
         }
         //local variables for states
-        string baseString = "Knowladge: ";
-        int score = 0;
+       
         
         private void btn_Study(object sender, RoutedEventArgs e)
         {
-            if(score == 200)
-            {
-                baseString = "Knowledge: ";
-            }
-            score = score + 10;
-            string finalString = baseString + score;
-            txtKnowledge.Text = finalString;
+            score = (score + 2);
+            txtKnowledgeNum.Text = score.ToString();
         }
 
         private void btn_Zoom(object sender, RoutedEventArgs e)
