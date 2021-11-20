@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Threading;
 using System.Media;
 using System.IO;
+using System.Windows.Threading;
 
 namespace IdleNeumont
 {
@@ -56,7 +57,7 @@ namespace IdleNeumont
             Thread backThread = new Thread(backRef);
             backThread.Start();
 
-
+           
 
         }
 
@@ -77,18 +78,20 @@ namespace IdleNeumont
 
 
         // SECOND THREAD FOR BACKGROUND
-        public void callBackThread()
+        private void callBackThread()
         {
 
-            do
-            {
+           
                 // IDLE KNOWLEDGE
-                Action action = () =>
-                {
-                    score = (score + (baseIncrement * multiplier));
-                    txtKnowledgeNum.Text = score.ToString();
-                }; Dispatcher.BeginInvoke(action);
-            } while (!genStop);
+                this.Dispatcher.BeginInvoke(DispatcherPriority.Normal,
+                      (ThreadStart)delegate ()
+                      {
+                          score = score + (baseIncrement * multiplier);
+                          txtKnowledgeNum.Text = score.ToString();
+                      }
+                        );
+
+           
                 
         }
 
@@ -131,6 +134,7 @@ namespace IdleNeumont
         private void loadingTime(object sender, EventArgs e)
         {
             // Blanking Load Window 
+            timer.Stop();
             chaoticStart.Visibility = Visibility.Collapsed;
             neumontStart.Visibility = Visibility.Collapsed;
             stackStart.Visibility = Visibility.Collapsed;
@@ -142,7 +146,7 @@ namespace IdleNeumont
             mainMenu.Visibility = Visibility.Visible;
             
             // Run the actual game xd
-            Game();
+        
            
         }
 
@@ -164,10 +168,12 @@ namespace IdleNeumont
         private void btn_Newgame(object sender, RoutedEventArgs e)
         {
             
-            timer.Stop();
+            
             mainMenu.Visibility = Visibility.Collapsed;
             gameWindow.Visibility = Visibility.Visible;
             this.Background = gameBackground;
+           
+            Game();
         }
         //local variables for states
        
