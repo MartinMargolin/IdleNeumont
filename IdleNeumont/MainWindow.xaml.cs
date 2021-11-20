@@ -178,7 +178,7 @@ namespace IdleNeumont
             }
             score = score + 10;
             string finalString = baseString + score;
-            txtBox1.Text = finalString;
+            txtKnowledge.Text = finalString;
         }
 
         private void btn_Zoom(object sender, RoutedEventArgs e)
