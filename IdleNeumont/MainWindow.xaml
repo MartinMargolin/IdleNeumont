@@ -29,7 +29,7 @@
 
         </StackPanel>
         <StackPanel x:Name= "gameWindow" Visibility="Collapsed">
-            <TextBox Width="300" Height="50" Margin="40" Text="Knowledge: 0" FontSize="32" />
+            <TextBox Width="300" Height="50" Margin="40" Text="Knowladge: 0" FontSize="32" Name="txtBox1" />
             <Button Width="100" Height="50" Margin="10" Content="Study" FontSize="32" Click="btn_Study" />
             <Button Width="100" Height="50" Margin="10" Content="Zoom into class" HorizontalAlignment="Left" FontSize="16" Click="btn_Zoom" />
             <Button Width="100" Height="50" Margin="10" Content="Homework" HorizontalAlignment="Left" FontSize="16" Click="btn_Homework" />

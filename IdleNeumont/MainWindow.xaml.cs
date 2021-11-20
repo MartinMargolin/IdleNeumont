@@ -165,10 +165,19 @@ namespace IdleNeumont
             mainMenu.Visibility = Visibility.Collapsed;
             gameWindow.Visibility = Visibility.Visible;
         }
-
+        //local variables for states
+        string baseString = "Knowladge: ";
+        int score = 0;
+        
         private void btn_Study(object sender, RoutedEventArgs e)
         {
-
+            if(score == 200)
+            {
+                baseString = "Knowledge";
+            }
+            score = score + 10;
+            string finalString = baseString + score;
+            txtBox1.Text = finalString;
         }
 
         private void btn_Zoom(object sender, RoutedEventArgs e)
