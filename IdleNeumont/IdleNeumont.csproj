@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Background.png" />
     <None Remove="Resources\ChaoticWhiteSmall.png" />
     <None Remove="Resources\Full_Pastel.png" />
     <None Remove="Resources\IdleNeumontCyan.png" />
@@ -25,6 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Resources\Background.png" />
     <Resource Include="Resources\ChaoticWhiteSmall.png" />
     <Resource Include="Resources\Full_Pastel.png" />
     <Resource Include="Resources\LoadGame.png" />

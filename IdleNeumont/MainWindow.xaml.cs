@@ -28,6 +28,7 @@ namespace IdleNeumont
         {
             InitializeComponent();
 
+            gameBackground.ImageSource = new Uri(@"");
             
             // TIMER TimeSpan SYNTAX -> (Days, Hours, Minutes, Seconds, Milliseconds)
             timer.Interval = new TimeSpan(0,0,0,1,300);
@@ -62,9 +63,14 @@ namespace IdleNeumont
         //
 
 
-        // CREATE SOUND -> DIRECTORY MANAGEMENT FOR RELATIVE FILEPATH
+        // CREATE SOUNDS -> DIRECTORY MANAGEMENT FOR RELATIVE FILEPATH
         System.Media.SoundPlayer startSound = new System.Media.SoundPlayer(((Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName).Parent.FullName) + @"\IdleNeumont\Resources\startup.wav"));
-           
+
+        // CREATE BRUSHES/UI CHANGES 
+
+        ImageBrush gameBackground = new ImageBrush();
+       
+
         // CREATE TIMER
         System.Windows.Threading.DispatcherTimer timer = new System.Windows.Threading.DispatcherTimer();
 
