@@ -39,7 +39,7 @@ namespace IdleNeumont
 
 
           
-
+            // FUK THIS TIMER SHIT I SHALL JUST USE THREAD.SLEEP - I WILL FIX ALL THIS TO MAKE IT NICER AND USE THREAD.SLEEP (MARTIN)
 
 
         }
@@ -131,7 +131,7 @@ namespace IdleNeumont
 
             // Menu -> Visible
             mainMenu.Visibility = Visibility.Visible;
-
+            
             // Run the actual game xd
             Game();
            
@@ -154,6 +154,7 @@ namespace IdleNeumont
 
         private void btn_Newgame(object sender, RoutedEventArgs e)
         {
+            
             timer.Stop();
             mainMenu.Visibility = Visibility.Collapsed;
             gameWindow.Visibility = Visibility.Visible;
