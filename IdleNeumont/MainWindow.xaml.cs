@@ -24,8 +24,9 @@ namespace IdleNeumont
     {
         // Don't worry about this
         private bool genStop = false;
+        private bool gameEnd = false;
 
-        double score = 0;
+        private double score = 0;
         private double multiplier = 1.0;
         private double baseIncrement = 1.0;
 
@@ -83,19 +84,26 @@ namespace IdleNeumont
         {
             do
             {
-                score = (score + (baseIncrement * multiplier));
 
-                this.Dispatcher.Invoke(DispatcherPriority.Normal,
-                    (ThreadStart)delegate ()
+                if (genStop ==  true)
+                {
+                    do
                     {
-                                 txtKnowledgeNum.Text = score.ToString();
-                                
-                    }
-                    );
+                        score = (score + (baseIncrement * multiplier));
 
-                Thread.Sleep(1000);
+                        this.Dispatcher.Invoke(DispatcherPriority.Normal,
+                            (ThreadStart)delegate ()
+                            {
+                                txtKnowledgeNum.Text = score.ToString();
+                            }
+                            );
 
-            } while(!genStop);
+                        Thread.Sleep(1000);
+
+                    } while (!genStop);
+                }
+
+            } while (!gameEnd);
         }
     
 
@@ -192,10 +200,10 @@ namespace IdleNeumont
         {
             Game();
             int purchase = 100;
-            if(score <= purchase)
+            if(score >= purchase)
             {
-                sleeptime -= 100;
-                purchase += 100;
+                genStop = true;
+                score -= 100;
             }
 
         }
