@@ -76,19 +76,26 @@ namespace IdleNeumont
         // CREATE TIMER
         System.Windows.Threading.DispatcherTimer timer = new System.Windows.Threading.DispatcherTimer();
 
-        int sleeptime = 500;
+        int sleeptime = 50000;
 
         // SECOND THREAD FOR BACKGROUND
         private void callBackThread()
-        {            
-            this.Dispatcher.BeginInvoke(DispatcherPriority.Normal,
-                        (ThreadStart)delegate ()
-                        {
-                           score = (score + (baseIncrement * multiplier));
-                            txtKnowledgeNum.Text = score.ToString();
-                        }
-                        );
+        {
+            do
+            {
+                score = (score + (baseIncrement * multiplier));
 
+                this.Dispatcher.Invoke(DispatcherPriority.Normal,
+                    (ThreadStart)delegate ()
+                    {
+                                 txtKnowledgeNum.Text = score.ToString();
+                                
+                    }
+                    );
+
+                Thread.Sleep(1000);
+
+            } while(!genStop);
         }
     
 
