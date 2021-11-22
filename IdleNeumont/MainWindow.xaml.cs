@@ -198,7 +198,7 @@ namespace IdleNeumont
 
         private void btn_Zoom(object sender, RoutedEventArgs e)
         {
-            Game();
+            
             int purchase = 100;
             if(score >= purchase)
             {
