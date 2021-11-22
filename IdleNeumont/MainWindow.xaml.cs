@@ -212,5 +212,15 @@ namespace IdleNeumont
         {
 
         }
+
+        private void btn_Class(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_GroupWork(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
