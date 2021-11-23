@@ -73,6 +73,7 @@ namespace IdleNeumont
 
         // CREATE SOUNDS -> DIRECTORY MANAGEMENT FOR RELATIVE FILEPATH
         System.Media.SoundPlayer startSound = new System.Media.SoundPlayer(((Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName).Parent.FullName) + @"\IdleNeumont\Resources\startup.wav"));
+        System.Media.SoundPlayer backgroundSound = new System.Media.SoundPlayer(((Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName).Parent.FullName) + @"\IdleNeumont\Resources\background.wav"));
 
         // CREATE BRUSHES/UI CHANGES 
         ImageBrush gameBackground = new ImageBrush(new BitmapImage(new Uri(((Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName).Parent.FullName) + @"\IdleNeumont\Resources\Background.png"))));
@@ -159,6 +160,8 @@ namespace IdleNeumont
 
             // Menu -> Visible
             mainMenu.Visibility = Visibility.Visible;
+
+            backgroundSound.PlayLooping();
             
            
         }

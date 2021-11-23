@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <None Remove="Resources\Background.png" />
+    <None Remove="Resources\background.wav" />
     <None Remove="Resources\ChaoticWhiteSmall.png" />
     <None Remove="Resources\Class.png" />
     <None Remove="Resources\Full_Pastel.png" />
@@ -33,6 +34,7 @@
 
   <ItemGroup>
     <Resource Include="Resources\Background.png" />
+    <Resource Include="Resources\background.wav" />
     <Resource Include="Resources\ChaoticWhiteSmall.png" />
     <Resource Include="Resources\Class.png" />
     <Resource Include="Resources\Full_Pastel.png" />
