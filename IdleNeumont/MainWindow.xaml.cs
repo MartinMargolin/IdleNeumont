@@ -26,7 +26,8 @@ namespace IdleNeumont
         private bool genStop = false;
         private bool gameEnd = false;
 
-        private double score = 0;
+        private int sleeptime = 50000;
+        private double score = 98;
         private double multiplier = 1.0;
         private double baseIncrement = 1.0;
 
@@ -77,11 +78,10 @@ namespace IdleNeumont
         // CREATE TIMER
         System.Windows.Threading.DispatcherTimer timer = new System.Windows.Threading.DispatcherTimer();
 
-        int sleeptime = 50000;
 
         // SECOND THREAD FOR BACKGROUND
         private void callBackThread()
-        {
+        {    
             do
             {
 
