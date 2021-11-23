@@ -87,9 +87,7 @@ namespace IdleNeumont
                 {
                     do
                     {
-                        
-
-                           
+                                      
                                 score += baseIncrement * multiplier;
 
                                 this.Dispatcher.Invoke(DispatcherPriority.Normal,
@@ -101,8 +99,6 @@ namespace IdleNeumont
 
                                 Thread.Sleep(1000);
                         
-                     
-
                     } while (!genStop);
                 }
 
@@ -206,6 +202,9 @@ namespace IdleNeumont
                 genStop = true;
                 score -= 30;
             }
+
+            btnZoom.IsEnabled = false;
+            btnZoom.Visibility = Visibility.Hidden;
 
         }
 
