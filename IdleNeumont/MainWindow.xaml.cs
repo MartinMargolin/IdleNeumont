@@ -29,7 +29,8 @@ namespace IdleNeumont
         private int sleeptime = 50000;
         private double score = 98;
         private double multiplier = 1.0;
-        private double baseIncrement = 1.0;
+        private double baseIncrement = 0.0;
+        private double clickIncrement = 1.0;
 
         public MainWindow()
         {
@@ -54,6 +55,9 @@ namespace IdleNeumont
         private void Game()
         {
 
+
+            genStop = true;
+
             // Thread creaton stuff
             ThreadStart backRef = new ThreadStart(callBackThread);
             Thread backThread = new Thread(backRef);
@@ -70,6 +74,7 @@ namespace IdleNeumont
 
         // CREATE SOUNDS -> DIRECTORY MANAGEMENT FOR RELATIVE FILEPATH
         System.Media.SoundPlayer startSound = new System.Media.SoundPlayer(((Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName).Parent.FullName) + @"\IdleNeumont\Resources\startup.wav"));
+        System.Media.SoundPlayer backgroundSound = new System.Media.SoundPlayer(((Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName).Parent.FullName) + @"\IdleNeumont\Resources\background.wav"));
 
         // CREATE BRUSHES/UI CHANGES 
         ImageBrush gameBackground = new ImageBrush(new BitmapImage(new Uri(((Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName).Parent.FullName) + @"\IdleNeumont\Resources\Background.png"))));
@@ -84,7 +89,7 @@ namespace IdleNeumont
             do
             {
 
-                if (genStop ==  true)
+                if (genStop == true)
                 {
                     do
                     {
@@ -156,6 +161,8 @@ namespace IdleNeumont
 
             // Menu -> Visible
             mainMenu.Visibility = Visibility.Visible;
+
+            backgroundSound.PlayLooping();
             
            
         }
@@ -190,38 +197,68 @@ namespace IdleNeumont
         
         private void btn_Study(object sender, RoutedEventArgs e)
         {
-            score = (score + 2);
+            score += clickIncrement;
             txtKnowledgeNum.Text = score.ToString();
         }
 
         private void btn_Zoom(object sender, RoutedEventArgs e)
         {
             
-            int purchase = 30;
+            int purchase = 150;
             if(score >= purchase)
             {
-                genStop = true;
-                score -= 30;
+              
+                score -= 150;
+
+                baseIncrement += 1;
+
+                txtKnowledgeNum.Text = score.ToString();
             }
 
-            btnZoom.IsEnabled = false;
-            btnZoom.Visibility = Visibility.Hidden;
+
 
         }
 
         private void btn_Homework(object sender, RoutedEventArgs e)
         {
+            int purchase = 50;
+            if (score >= purchase)
+            {
 
+                score -= 50;
+
+                clickIncrement += 1;
+
+                txtKnowledgeNum.Text = score.ToString();
+            }
         }
 
         private void btn_Class(object sender, RoutedEventArgs e)
         {
+            int purchase = 700;
+            if (score >= purchase)
+            {
 
+                score -= 700;
+
+                baseIncrement += 3;
+
+                txtKnowledgeNum.Text = score.ToString();
+            }
         }
 
         private void btn_GroupWork(object sender, RoutedEventArgs e)
         {
+            int purchase = 450;
+            if (score >= purchase)
+            {
 
+                score -= 450;
+
+                clickIncrement += 3;
+
+                txtKnowledgeNum.Text = score.ToString();
+            }
         }
     }
 }
