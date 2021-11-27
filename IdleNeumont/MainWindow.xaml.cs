@@ -78,7 +78,6 @@ namespace IdleNeumont
         // CREATE TIMER
         System.Windows.Threading.DispatcherTimer timer = new System.Windows.Threading.DispatcherTimer();
 
-
         // SECOND THREAD FOR BACKGROUND
         private void callBackThread()
         {    
@@ -89,17 +88,18 @@ namespace IdleNeumont
                 {
                     do
                     {
-                        score = (score + (baseIncrement * multiplier));
+                                      
+                                score += baseIncrement * multiplier;
 
-                        this.Dispatcher.Invoke(DispatcherPriority.Normal,
-                            (ThreadStart)delegate ()
-                            {
-                                txtKnowledgeNum.Text = score.ToString();
-                            }
-                            );
+                                this.Dispatcher.Invoke(DispatcherPriority.Normal,
+                                    (ThreadStart)delegate ()
+                                    {
+                                        txtKnowledgeNum.Text = score.ToString();
+                                    }
+                                    );
 
-                        Thread.Sleep(1000);
-
+                                Thread.Sleep(1000);
+                        
                     } while (!genStop);
                 }
 
@@ -157,8 +157,6 @@ namespace IdleNeumont
             // Menu -> Visible
             mainMenu.Visibility = Visibility.Visible;
             
-            // Run the actual game xd
-            Game();
            
         }
 
@@ -198,13 +196,16 @@ namespace IdleNeumont
 
         private void btn_Zoom(object sender, RoutedEventArgs e)
         {
-            Game();
-            int purchase = 100;
+            
+            int purchase = 30;
             if(score >= purchase)
             {
                 genStop = true;
-                score -= 100;
+                score -= 30;
             }
+
+            btnZoom.IsEnabled = false;
+            btnZoom.Visibility = Visibility.Hidden;
 
         }
 
