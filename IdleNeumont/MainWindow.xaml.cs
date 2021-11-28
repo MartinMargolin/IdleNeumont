@@ -29,12 +29,25 @@ namespace IdleNeumont
         private double score = 0;
         private double multiplier = 1.0;
         private double baseIncrement = 0.0;
-        private double clickIncrement = 1.0;
+        private double clickIncrement = 10.0;
 
+
+
+        // Purchase Values
+        int[] purchaseValues = new int[10];
+
+       
+        
         public MainWindow()
         {
             InitializeComponent();
+
+
             
+            
+
+
+
             // TIMER TimeSpan SYNTAX -> (Days, Hours, Minutes, Seconds, Milliseconds)
             timer.Interval = new TimeSpan(0,0,0,1,300);
             // WHEN INTERVAL -> RUN loadStart
@@ -53,6 +66,16 @@ namespace IdleNeumont
         // GAME METHOD REEE
         private void Game()
         {
+            // Purchase Values Dictionary + Defaults
+
+            // Zoom -- [0] Default -> 150
+            purchaseValues[0] = 150;
+            // Homework -- [1] Default -> 50
+            purchaseValues[1] = 50;
+            // Class -- [2] Default -> 700
+            purchaseValues[2] = 700;
+            // Group Work -- [3] Default -> 450
+            purchaseValues[3] = 450;
 
 
             genStop = true;
@@ -169,10 +192,15 @@ namespace IdleNeumont
         private void btn_Quit(object sender, RoutedEventArgs e)
         {
 
+            Close();
+
         }
 
         private void btn_Settings(object sender, RoutedEventArgs e)
         {
+
+            settingsWindow.Visibility = Visibility.Visible;
+            mainMenu.Visibility = Visibility.Collapsed;
 
         }
 
@@ -203,15 +231,21 @@ namespace IdleNeumont
         private void btn_Zoom(object sender, RoutedEventArgs e)
         {
             
-            int purchase = 150;
-            if(score >= purchase)
+            if(score >= purchaseValues[0])
             {
               
                 score -= 150;
 
+                purchaseValues[0] = purchaseValues[0] + 105;
+
+                zoomCostTxt.Text = purchaseValues[0].ToString();
+
                 baseIncrement += 1;
 
                 txtKnowledgeNum.Text = score.ToString();
+
+                classBtn.Visibility = Visibility.Visible;
+                classCostTxt.Visibility = Visibility.Visible;
             }
 
 
@@ -220,25 +254,36 @@ namespace IdleNeumont
 
         private void btn_Homework(object sender, RoutedEventArgs e)
         {
-            int purchase = 50;
-            if (score >= purchase)
+            
+            if (score >= purchaseValues[1])
             {
 
                 score -= 50;
 
+                purchaseValues[1] = purchaseValues[1] + 60;
+
+                homeworkCostTxt.Text = purchaseValues[1].ToString();
+
                 clickIncrement += 1;
 
                 txtKnowledgeNum.Text = score.ToString();
+
+                groupBtn.Visibility = Visibility.Visible;
+                groupCostTxt.Visibility = Visibility.Visible;
             }
         }
 
         private void btn_Class(object sender, RoutedEventArgs e)
         {
-            int purchase = 700;
-            if (score >= purchase)
+      
+            if (score >= purchaseValues[2])
             {
 
                 score -= 700;
+
+                purchaseValues[2] = purchaseValues[2] + 650;
+
+                classCostTxt.Text = purchaseValues[2].ToString();
 
                 baseIncrement += 3;
 
@@ -248,16 +293,27 @@ namespace IdleNeumont
 
         private void btn_GroupWork(object sender, RoutedEventArgs e)
         {
-            int purchase = 450;
-            if (score >= purchase)
+        
+            if (score >= purchaseValues[3])
             {
 
                 score -= 450;
+
+                purchaseValues[3] = purchaseValues[3] + 400;
+
+                groupCostTxt.Text = purchaseValues[3].ToString();
 
                 clickIncrement += 3;
 
                 txtKnowledgeNum.Text = score.ToString();
             }
+        }
+
+        private void btn_Menu(object sender, RoutedEventArgs e)
+        {
+
+            settingsWindow.Visibility = Visibility.Collapsed;
+            mainMenu.Visibility = Visibility.Visible;
         }
     }
 }

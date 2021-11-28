@@ -20,16 +20,26 @@
     <None Remove="Resources\IdleNeumontPrestigeEdition.png" />
     <None Remove="Resources\Knowledge.png" />
     <None Remove="Resources\LoadGame.png" />
+    <None Remove="Resources\Menu.png" />
+    <None Remove="Resources\Music.png" />
     <None Remove="Resources\NeumontGold.png" />
     <None Remove="Resources\NeumontGoldSmall.png" />
     <None Remove="Resources\NeumontPastel.png" />
     <None Remove="Resources\NewGame.png" />
     <None Remove="Resources\Quit.png" />
     <None Remove="Resources\Settings.png" />
+    <None Remove="Resources\SettingsMenu.png" />
+    <None Remove="Resources\Sounds.png" />
     <None Remove="Resources\startup.mp3" />
     <None Remove="Resources\startup.wav" />
     <None Remove="Resources\Study.png" />
     <None Remove="Resources\Zoom.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Menu.png" />
+    <Resource Include="Resources\Music.png" />
+    <Resource Include="Resources\SettingsMenu.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -48,6 +58,7 @@
     <Resource Include="Resources\NewGame.png" />
     <Resource Include="Resources\Quit.png" />
     <Resource Include="Resources\Settings.png" />
+    <Resource Include="Resources\Sounds.png" />
     <Resource Include="Resources\startup.mp3" />
     <Resource Include="Resources\startup.wav" />
     <Resource Include="Resources\Study.png" />
