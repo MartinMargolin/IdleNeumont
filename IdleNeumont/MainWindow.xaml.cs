@@ -26,7 +26,6 @@ namespace IdleNeumont
         private bool genStop = false;
         private bool gameEnd = false;
 
-        private int sleeptime = 50000;
         private double score = 98;
         private double multiplier = 1.0;
         private double baseIncrement = 0.0;
