@@ -234,7 +234,7 @@ namespace IdleNeumont
             if(score >= purchaseValues[0])
             {
               
-                score -= 150;
+                score -= purchaseValues[0];
 
                 purchaseValues[0] = purchaseValues[0] + 105;
 
@@ -258,7 +258,7 @@ namespace IdleNeumont
             if (score >= purchaseValues[1])
             {
 
-                score -= 50;
+                score -= purchaseValues[1];
 
                 purchaseValues[1] = purchaseValues[1] + 60;
 
@@ -279,7 +279,7 @@ namespace IdleNeumont
             if (score >= purchaseValues[2])
             {
 
-                score -= 700;
+                score -= purchaseValues[2];
 
                 purchaseValues[2] = purchaseValues[2] + 650;
 
@@ -297,7 +297,7 @@ namespace IdleNeumont
             if (score >= purchaseValues[3])
             {
 
-                score -= 450;
+                score -= purchaseValues[3];
 
                 purchaseValues[3] = purchaseValues[3] + 400;
 
