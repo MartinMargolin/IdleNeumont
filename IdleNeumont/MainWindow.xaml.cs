@@ -311,7 +311,7 @@ namespace IdleNeumont
 
         private void btn_Menu(object sender, RoutedEventArgs e)
         {
-
+    
             settingsWindow.Visibility = Visibility.Collapsed;
             mainMenu.Visibility = Visibility.Visible;
         }
