@@ -77,9 +77,9 @@ namespace IdleNeumont
             // Group Work -- [3] Default -> 450
             purchaseValues[3] = 450;
             //projects --[4] Defult -> 2000
-            purchaseValues[4] = 2000;
+            purchaseValues[5] = 2000;
             //tuotring --[5] Default ->850
-            purchaseValues[5] = 850;
+            purchaseValues[4] = 850;
 
 
             genStop = true;
