@@ -26,7 +26,7 @@ namespace IdleNeumont
         private bool genStop = false;
         private bool gameEnd = false;
 
-        private double score = 98;
+        private double score = 0;
         private double multiplier = 1.0;
         private double baseIncrement = 0.0;
         private double clickIncrement = 10.0;
@@ -73,9 +73,9 @@ namespace IdleNeumont
             // Group Work -- [3] Default -> 450
             purchaseValues[3] = 450;
             //projects --[4] Defult -> 2000
-            purchaseValues[4] = 2000;
+            purchaseValues[4] = 850;
             //tuotring --[5] Default ->850
-            purchaseValues[5] = 850;
+            purchaseValues[5] = 2000;
 
 
             genStop = true;
@@ -316,12 +316,12 @@ namespace IdleNeumont
         }
         private void btn_projects(object sender, RoutedEventArgs e)
         {
-            if(score >= purchaseValues[5])
+            if(score >= purchaseValues[4])
             {
-                score -= purchaseValues[5];
-                purchaseValues[5] = purchaseValues[5] + 750;
-                projectCostTxt.Text = purchaseValues[5].ToString();
-                clickIncrement = +5;
+                score -= purchaseValues[4];
+                purchaseValues[4] = purchaseValues[4] + 350;
+                projectCostTxt.Text = purchaseValues[4].ToString();
+                clickIncrement += 5;
                 txtKnowledgeNum.Text = score.ToString();
             }
         }
@@ -329,14 +329,14 @@ namespace IdleNeumont
         private void btn_Tutoring(object sender, RoutedEventArgs e)
         {
 
-            if (score >= purchaseValues[4])
+            if (score >= purchaseValues[5])
             {
 
-                score -= purchaseValues[4];
+                score -= purchaseValues[5];
 
-                purchaseValues[4] = purchaseValues[4] + 750;
+                purchaseValues[5] = purchaseValues[5] + 750;
 
-                tutorCostTxt.Text = purchaseValues[4].ToString();
+                tutorCostTxt.Text = purchaseValues[5].ToString();
 
                 baseIncrement += 5;
 
