@@ -76,10 +76,10 @@ namespace IdleNeumont
             purchaseValues[2] = 700;
             // Group Work -- [3] Default -> 450
             purchaseValues[3] = 450;
-            //tuotring --[4] Default ->850
-            purchaseValues[4] = 850;
-            //projects --[5] Defult -> 2000
-            purchaseValues[6] = 2000;
+            //projects --[4] Defult -> 2000
+            purchaseValues[4] = 2000;
+            //tuotring --[5] Default ->850
+            purchaseValues[5] = 850;
 
 
             genStop = true;
@@ -313,6 +313,9 @@ namespace IdleNeumont
                 clickIncrement += 3;
 
                 txtKnowledgeNum.Text = score.ToString();
+
+                projectBtn.Visibility = Visibility.Visible;
+                projectCostTxt.Visibility = Visibility.Visible;
             }
         }
         private void btn_projects(object sender, RoutedEventArgs e)
