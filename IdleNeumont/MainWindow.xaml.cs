@@ -338,7 +338,7 @@ namespace IdleNeumont
 
                 tutorCostTxt.Text = purchaseValues[4].ToString();
 
-                clickIncrement += 3;
+                baseIncrement += 5;
 
                 txtKnowledgeNum.Text = score.ToString();
             }
