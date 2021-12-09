@@ -288,6 +288,9 @@ namespace IdleNeumont
                 baseIncrement += 3;
 
                 txtKnowledgeNum.Text = score.ToString();
+
+                tutorBtn.Visibility = Visibility.Visible;
+                tutorCostTxt.Visibility = Visibility.Visible;
             }
         }
 
@@ -302,6 +305,24 @@ namespace IdleNeumont
                 purchaseValues[3] = purchaseValues[3] + 400;
 
                 groupCostTxt.Text = purchaseValues[3].ToString();
+
+                clickIncrement += 3;
+
+                txtKnowledgeNum.Text = score.ToString();
+            }
+        }
+
+        private void btn_Tutoring(object sender, RoutedEventArgs e)
+        {
+
+            if (score >= purchaseValues[4])
+            {
+
+                score -= purchaseValues[4];
+
+                purchaseValues[4] = purchaseValues[4] + 750;
+
+                tutorCostTxt.Text = purchaseValues[3].ToString();
 
                 clickIncrement += 3;
 
