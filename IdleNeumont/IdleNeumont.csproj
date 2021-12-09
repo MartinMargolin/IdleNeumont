@@ -26,6 +26,7 @@
     <None Remove="Resources\NeumontGoldSmall.png" />
     <None Remove="Resources\NeumontPastel.png" />
     <None Remove="Resources\NewGame.png" />
+    <None Remove="Resources\Projects.png" />
     <None Remove="Resources\Quit.png" />
     <None Remove="Resources\Settings.png" />
     <None Remove="Resources\SettingsMenu.png" />
@@ -33,12 +34,14 @@
     <None Remove="Resources\startup.mp3" />
     <None Remove="Resources\startup.wav" />
     <None Remove="Resources\Study.png" />
+    <None Remove="Resources\Tutoring.png" />
     <None Remove="Resources\Zoom.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Resources\Menu.png" />
     <Resource Include="Resources\Music.png" />
+    <Resource Include="Resources\Projects.png" />
     <Resource Include="Resources\SettingsMenu.png" />
   </ItemGroup>
 
@@ -62,6 +65,7 @@
     <Resource Include="Resources\startup.mp3" />
     <Resource Include="Resources\startup.wav" />
     <Resource Include="Resources\Study.png" />
+    <Resource Include="Resources\Tutoring.png" />
     <Resource Include="Resources\Zoom.png" />
   </ItemGroup>
 
