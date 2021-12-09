@@ -43,10 +43,6 @@ namespace IdleNeumont
             InitializeComponent();
 
 
-            
-            
-
-
 
             // TIMER TimeSpan SYNTAX -> (Days, Hours, Minutes, Seconds, Milliseconds)
             timer.Interval = new TimeSpan(0,0,0,1,300);
@@ -77,9 +73,9 @@ namespace IdleNeumont
             // Group Work -- [3] Default -> 450
             purchaseValues[3] = 450;
             //projects --[4] Defult -> 2000
-            purchaseValues[5] = 2000;
+            purchaseValues[4] = 2000;
             //tuotring --[5] Default ->850
-            purchaseValues[4] = 850;
+            purchaseValues[5] = 850;
 
 
             genStop = true;
@@ -340,7 +336,7 @@ namespace IdleNeumont
 
                 purchaseValues[4] = purchaseValues[4] + 750;
 
-                tutorCostTxt.Text = purchaseValues[3].ToString();
+                tutorCostTxt.Text = purchaseValues[4].ToString();
 
                 clickIncrement += 3;
 
