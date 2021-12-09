@@ -69,15 +69,15 @@
                 <Button Visibility="Collapsed" x:Name="groupBtn" Grid.Column="2" Grid.Row="2" Width="130" Height="50" Margin="30, 0, 0, 10"  HorizontalAlignment="Left" Click="btn_GroupWork" ToolTip="Work on your group project! (+3 Knowledge/Click)" >
                     <Image Source="/Resources/GroupWork.png"/>
                 </Button>
-                <TextBlock Visibility="Visible" x:Name="groupCostTxt" Text="450" FontSize="35" FontFamily="Arial Black" Grid.Column="3" Grid.Row="2" HorizontalAlignment="Left" Margin="5"/>
-                <Button Visibility="Visible" x:Name="tutorBtn" Grid.Column="0" Grid.Row="3" Width="130" Height="50" Margin="30, 0, 0, 10"  HorizontalAlignment="Left" Click="btn_GroupWork" ToolTip="Go to the tutors and get help! (+5 Knowledge/Click)" >
-                    <Image Source="/Resources/GroupWork.png"/>
+                <TextBlock Visibility="Collapsed" x:Name="groupCostTxt" Text="450" FontSize="35" FontFamily="Arial Black" Grid.Column="3" Grid.Row="2" HorizontalAlignment="Left" Margin="5"/>
+                <Button Visibility="Collapsed" x:Name="tutorBtn" Grid.Column="0" Grid.Row="3" Width="130" Height="50" Margin="30, 0, 0, 10"  HorizontalAlignment="Left" Click="btn_GroupWork" ToolTip="Go to the tutors and get help! (+5 Knowledge/Click)" >
+                    <Image Source="/Resources/Tutoring.png"/>
                 </Button>
-                <TextBlock Visibility="Visible" x:Name="tutorCostTxt" Text="2000" FontSize="35" FontFamily="Arial Black" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" Margin="5"/>
-                <Button Visibility="Visible" x:Name="projectBtn" Grid.Column="2" Grid.Row="3" Width="130" Height="50" Margin="30, 0, 0, 10"  HorizontalAlignment="Left" Click="btn_GroupWork" ToolTip="Work on your projects! (+5 Knowledge/Click)" >
-                    <Image Source="/Resources/GroupWork.png"/>
+                <TextBlock Visibility="Collapsed" x:Name="tutorCostTxt" Text="2000" FontSize="35" FontFamily="Arial Black" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" Margin="5"/>
+                <Button Visibility="Collapsed" x:Name="projectBtn" Grid.Column="2" Grid.Row="3" Width="130" Height="50" Margin="30, 0, 0, 10"  HorizontalAlignment="Left" Click="btn_GroupWork" ToolTip="Work on your projects! (+5 Knowledge/Click)" >
+                    <Image Source="/Resources/Projects.png"/>
                 </Button>
-                <TextBlock Visibility="Visible" x:Name="projectCostTxt" Text="850" FontSize="35" FontFamily="Arial Black" Grid.Column="3" Grid.Row="3" HorizontalAlignment="Left" Margin="5"/>
+                <TextBlock Visibility="Collapsed" x:Name="projectCostTxt" Text="850" FontSize="35" FontFamily="Arial Black" Grid.Column="3" Grid.Row="3" HorizontalAlignment="Left" Margin="5"/>
             </Grid>
 
         </StackPanel>
